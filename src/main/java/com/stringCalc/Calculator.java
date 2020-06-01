@@ -18,12 +18,16 @@ public class Calculator {
 
 	private static String[] extractInteger(String integer) {
 		if(integer.startsWith("//")) {
-			return splitUsingcustomDelimiter(integer);
+			return splitUsingCustomDelimiter(integer);
 		}
+		return splitUsingCommaNewline(integer);
+	}
+
+	private static String[] splitUsingCommaNewline(String integer) {
 		return integer.split(",|\n");
 	}
 
-	private static String[] splitUsingcustomDelimiter(String integer) {
+	private static String[] splitUsingCustomDelimiter(String integer) {
 		Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(integer);
 		matcher.matches();
 		String delimiter = matcher.group(1);
