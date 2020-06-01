@@ -1,5 +1,7 @@
 package com.stringCalc;
 
+import java.util.Arrays;
+
 public class Calculator {
 
 	public static Integer add(String integer) {
@@ -8,9 +10,13 @@ public class Calculator {
 			return 0;
 		else if (integer.contains(",")) {
 			String[] numbers = integer.split(",");
-			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+			return sumOfStringNumbers(numbers);
 		} else
 			return Integer.parseInt(integer);
+	}
+
+	private static int sumOfStringNumbers(String[] numbers) {
+		return Arrays.stream(numbers).mapToInt(Integer::valueOf).sum();
 	}
 
 }
