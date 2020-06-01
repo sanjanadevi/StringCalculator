@@ -68,7 +68,7 @@ class StringCalculatorApplicationTests {
 	}
 	
 	@Test
-	void acceptCustomMultipleDelimiterSyntax() throws Exception {
+	void acceptCustomDelimiterOfAnyLength() throws Exception {
 		assertEquals(3, Calculator.add("//;;\n1;;2"));
 	}
 
