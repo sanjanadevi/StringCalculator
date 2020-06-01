@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Calculator {
 
@@ -15,7 +16,7 @@ public class Calculator {
 			String[] numbers = extractInteger(integer);
 			List<Integer> intArr = checkIfIntegerIsLessThanZero(numbers);
 			if(intArr.size() > 0)
-				throw new Exception();
+				throw new Exception("Negative number found: "+intArr.stream().map(e -> String.valueOf(e)).collect(Collectors.joining(",")));
 			return sumOfStringNumbers(numbers);
 		} else
 			return Integer.parseInt(integer);

@@ -57,5 +57,14 @@ class StringCalculatorApplicationTests {
 			
 		}
 	}
+	
+	@Test
+	void throwExceptionOnNegativeNumberWithNegativeNumbers() {
+		try {
+			Calculator.add("-1,-2,3");
+		}catch(Exception e) {
+			assertEquals("Negative number found: -1,-2", e.getMessage());
+		}
+	}
 
 }
