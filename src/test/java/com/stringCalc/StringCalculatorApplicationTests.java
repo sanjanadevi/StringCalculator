@@ -1,5 +1,6 @@
 package com.stringCalc;
 
+import static org.assertj.core.api.Assertions.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -45,6 +46,16 @@ class StringCalculatorApplicationTests {
 	@Test
 	void acceptCustomDelimiterSyntax() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+	
+	@Test
+	void throwExceptionOnNegativeNumber() {
+		try {
+			Calculator.add("-1,2,3");
+			fail("Negative number found");
+		}catch(Exception e) {
+			
+		}
 	}
 
 }
