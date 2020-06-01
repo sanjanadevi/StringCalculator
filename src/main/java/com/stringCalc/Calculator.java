@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Calculator {
 
 	public static Integer add(String integer) {
-		// TODO Auto-generated method stub
 		if (integer.isEmpty())
 			return 0;
 		else if (integer.contains(",")) {
@@ -16,7 +15,7 @@ public class Calculator {
 	}
 
 	private static int sumOfStringNumbers(String[] numbers) {
-		return Arrays.stream(numbers).mapToInt(Integer::valueOf).sum();
+		return Arrays.stream(numbers).map(e -> e.trim()).mapToInt(Integer::valueOf).sum();
 	}
 
 }
