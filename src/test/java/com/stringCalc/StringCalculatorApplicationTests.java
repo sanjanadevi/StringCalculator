@@ -12,5 +12,10 @@ class StringCalculatorApplicationTests {
 	void returnZeroOnEmptyString() {
 		assertEquals(0, Calculator.add(""));
 	}
+	
+	@Test
+	void returnNumberOnNumberInput() {
+		assertEquals(6, Calculator.add("6"));
+	}
 
 }
