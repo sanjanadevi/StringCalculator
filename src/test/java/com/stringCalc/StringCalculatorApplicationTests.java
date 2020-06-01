@@ -9,42 +9,42 @@ import org.junit.jupiter.api.Test;
 class StringCalculatorApplicationTests {
 
 	@Test
-	void returnZeroOnEmptyString() {
+	void returnZeroOnEmptyString() throws Exception {
 		assertEquals(0, Calculator.add(""));
 	}
 	
 	@Test
-	void returnNumberOnNumberInput() {
+	void returnNumberOnNumberInput() throws Exception {
 		assertEquals(6, Calculator.add("6"));
 	}
 	
 	@Test
-	void returnNumberDelimitedByComma() {
+	void returnNumberDelimitedByComma() throws Exception {
 		assertEquals(3, Calculator.add("1,2"));
 	}
 	
 	@Test
-	void returnSumOfMultipleNumbersSeperatedByComma() {
+	void returnSumOfMultipleNumbersSeperatedByComma() throws Exception {
 		assertEquals(6, Calculator.add("1,2,3"));
 	}
 	
 	@Test
-	void returnNumberDelimitedByCommaWithSpace() {
+	void returnNumberDelimitedByCommaWithSpace() throws Exception {
 		assertEquals(3, Calculator.add("1, 2"));
 	}
 	
 	@Test
-	void acceptNewLineAsValidDelimiter() {
+	void acceptNewLineAsValidDelimiter() throws Exception {
 		assertEquals(6, Calculator.add("1,2\n3"));
 	}
 	
 	@Test
-	void shouldIgnoreNewLineAtTheEnd() {
+	void shouldIgnoreNewLineAtTheEnd() throws Exception {
 		assertEquals(3, Calculator.add("1,2\n"));
 	}
 	
 	@Test
-	void acceptCustomDelimiterSyntax() {
+	void acceptCustomDelimiterSyntax() throws Exception {
 		assertEquals(3, Calculator.add("//;\n1;2"));
 	}
 	

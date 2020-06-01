@@ -1,19 +1,33 @@
 package com.stringCalc;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Calculator {
 
-	public static Integer add(String integer) {
+	public static Integer add(String integer) throws Exception {
 		if (integer.isEmpty())
 			return 0;
 		else if (integer.contains(",") || integer.contains("//")) {
 			String[] numbers = extractInteger(integer);
+			List<Integer> intArr = checkIfIntegerIsLessThanZero(numbers);
+			if(intArr.size() > 0)
+				throw new Exception();
 			return sumOfStringNumbers(numbers);
 		} else
 			return Integer.parseInt(integer);
+	}
+
+	private static List<Integer> checkIfIntegerIsLessThanZero(String[] numbers) {
+		List<Integer> negativeNumberList = new ArrayList<Integer>();
+		for(String numb: numbers) {
+			if(Integer.valueOf(numb.trim()) < 0)
+				negativeNumberList.add(Integer.valueOf(numb.trim()));
+		}
+		return negativeNumberList;
 	}
 
 	private static String[] extractInteger(String integer) {
