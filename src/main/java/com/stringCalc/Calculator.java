@@ -14,12 +14,16 @@ public class Calculator {
 			return 0;
 		else if (integer.contains(",") || integer.contains("//")) {
 			String[] numbers = extractInteger(integer);
-			List<Integer> intArr = checkIfIntegerIsLessThanZero(numbers);
-			if(intArr.size() > 0)
-				throw new Exception("Negative number found: "+intArr.stream().map(e -> String.valueOf(e)).collect(Collectors.joining(",")));
+			negativeNumberCheck(numbers);
 			return sumOfStringNumbers(numbers);
 		} else
 			return Integer.parseInt(integer);
+	}
+
+	private static void negativeNumberCheck(String[] numbers) throws Exception {
+		List<Integer> intArr = checkIfIntegerIsLessThanZero(numbers);
+		if(intArr.size() > 0)
+			throw new Exception("Negative number found: "+intArr.stream().map(e -> String.valueOf(e)).collect(Collectors.joining(",")));
 	}
 
 	private static List<Integer> checkIfIntegerIsLessThanZero(String[] numbers) {
