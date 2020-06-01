@@ -1,13 +1,16 @@
 package com.stringCalc;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class StringCalculatorApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void returnZeroOnEmptyString() {
+		assertEquals(0, Calculator.add(""));
 	}
 
 }
