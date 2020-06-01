@@ -17,5 +17,10 @@ class StringCalculatorApplicationTests {
 	void returnNumberOnNumberInput() {
 		assertEquals(6, Calculator.add("6"));
 	}
+	
+	@Test
+	void returnNumberDelimitedByComma() {
+		assertEquals(3, Calculator.add("1,2"));
+	}
 
 }
