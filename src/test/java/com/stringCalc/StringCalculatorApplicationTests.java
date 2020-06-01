@@ -41,5 +41,10 @@ class StringCalculatorApplicationTests {
 	void shouldIgnoreNewLineAtTheEnd() {
 		assertEquals(3, Calculator.add("1,2\n"));
 	}
+	
+	@Test
+	void acceptCustomDelimiterSyntax() {
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
 
 }
