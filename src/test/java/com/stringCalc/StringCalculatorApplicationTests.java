@@ -3,7 +3,6 @@ package com.stringCalc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
 class StringCalculatorApplicationTests {
@@ -36,6 +35,11 @@ class StringCalculatorApplicationTests {
 	@Test
 	void acceptNewLineAsValidDelimiter() {
 		assertEquals(6, Calculator.add("1,2\n3"));
+	}
+	
+	@Test
+	void shouldIgnoreNewLineAtTheEnd() {
+		assertEquals(3, Calculator.add("1,2\n"));
 	}
 
 }

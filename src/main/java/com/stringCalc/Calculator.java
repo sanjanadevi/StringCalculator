@@ -8,10 +8,14 @@ public class Calculator {
 		if (integer.isEmpty())
 			return 0;
 		else if (integer.contains(",")) {
-			String[] numbers = integer.split(",");
+			String[] numbers = extractInteger(integer);
 			return sumOfStringNumbers(numbers);
 		} else
 			return Integer.parseInt(integer);
+	}
+
+	private static String[] extractInteger(String integer) {
+		return integer.split(",|\n");
 	}
 
 	private static int sumOfStringNumbers(String[] numbers) {
