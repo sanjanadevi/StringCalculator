@@ -66,5 +66,10 @@ class StringCalculatorApplicationTests {
 			assertEquals("Negative number found: -1,-2", e.getMessage());
 		}
 	}
+	
+	@Test
+	void acceptCustomMultipleDelimiterSyntax() throws Exception {
+		assertEquals(3, Calculator.add("//;;\n1;;2"));
+	}
 
 }
