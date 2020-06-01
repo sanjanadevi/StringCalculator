@@ -20,12 +20,17 @@ class StringCalculatorApplicationTests {
 	
 	@Test
 	void returnNumberDelimitedByComma() {
-		assertEquals(3, Calculator.add("1, 2"));
+		assertEquals(3, Calculator.add("1,2"));
 	}
 	
 	@Test
 	void returnSumOfMultipleNumbersSeperatedByComma() {
 		assertEquals(6, Calculator.add("1,2,3"));
+	}
+	
+	@Test
+	void returnNumberDelimitedByCommaWithSpace() {
+		assertEquals(3, Calculator.add("1, 2"));
 	}
 
 }
