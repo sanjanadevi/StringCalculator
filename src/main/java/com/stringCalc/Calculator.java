@@ -47,7 +47,7 @@ public class Calculator {
 	}
 
 	private static String[] splitUsingCustomDelimiter(String integer) {
-		Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(integer);
+		Matcher matcher = Pattern.compile("//(.*)\n(.*)").matcher(integer);
 		matcher.matches();
 		String delimiter = matcher.group(1);
 		String numbers = matcher.group(2);
